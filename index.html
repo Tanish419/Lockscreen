@@ -1,0 +1,404 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=4, initial-scale=1.0">
+    <title>lock screen</title>
+</head>
+
+<body id="body">
+
+    <div id="newcont">
+    </div>
+    <div id="lockscreen">
+        <div id="imagecont">
+            <img src="br.jpg" alt="Error iamge not found!" class="image">
+            <h4 id="title">Tanish kumar</h4>
+            <h6 id="subtitle">ktanish419@gmail.com</h6>
+            <input type="password" name="" id="input" placeholder="PIN">
+            <h4 id="pintext">I forget my PIN</h4>
+            <div id="loadingcont">
+                <img src="Spin-0.8s-194px.gif" alt="" id="loading">
+                <h4 id="welcome">Welcome</h4>
+            </div>
+        </div>
+        <div id="bijilicont">
+            <div class="bituu1"></div>
+            <div class="bituu1">
+                <img src="icons8-wifi-96.png" alt="" class="wifi">
+                <img src="icons8-battery-96.png" alt="" class="battery">
+                <img src="power.png" alt="" class="charge">
+
+            </div>
+        </div>
+    </div>
+    <div id="container">
+        <div class="timecont">
+            <h2 id="lock">00:00</h2>
+            <h3 id="mahina"></h3>
+        </div>
+        <div class="footer">
+            <div class="null"></div>
+            <div id="subfooter">
+                <img src="icons8-wifi-96.png" alt="" id="wifi">
+                <img src="icons8-battery-96.png" alt="" id="battery">
+            </div>
+        </div>
+    </div>
+
+    <style>
+        * {
+            margin: 0px;
+            padding: 0px;
+            color: white;
+        }
+
+        body {
+            background-size: cover;
+            margin: 0px;
+            padding: 0px;
+            /* background-image: url("Your\ name\ \(2\).png"); */
+            background-size: cover;
+            overflow: hidden;
+        }
+
+        .image {
+            width: 200px;
+            height: auto;
+            border-radius: 50%;
+            margin-top: 50px;
+        }
+
+        #loading {
+            height: 50px;
+            width: 50px;
+            /* border: 2px solid red; */
+            margin-top: 12px;
+        }
+
+        #loadingcont {
+            display: flex;
+            flex-direction: column;
+            /* border: 2px solid red; */
+            justify-content: center;
+            align-items: center;
+            display: none;
+            margin-top: 12px;
+        }
+
+        #pintext {
+            font-family: system-ui;
+            font-weight: normal;
+            font-size: 14px;
+            margin-top: 20px;
+            cursor: default;
+        }
+
+        #input {
+            background-color: rgba(68, 68, 68, 0.8);
+            padding: 0px 10px;
+            height: 30px;
+            width: 250px;
+            margin-top: 25px;
+            border: none;
+            border-radius: 4px;
+            box-shadow: 2px 2px 2px rgb(86, 165, 255);
+            color: white;
+            font-family: system-ui;
+            font-size: 14px;
+            /* display: none; */
+        }
+
+        #bijilicont {
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+            /* border: 2px solid blue; */
+            height: 16.5em;
+        }
+
+        #welcome {
+            margin: 8px;
+            font-family: system-ui;
+            font-size: 24px;
+
+        }
+
+        .bituu1 {
+            width: auto;
+            height: 50px;
+            /* border: 2px solid red; */
+            padding: 20px;
+        }
+
+        #bg {
+            /* border: 2px solid blue; */
+            width: 100%;
+            height: 4em;
+        }
+
+
+        #input::-webkit-inner-spin-button,
+        #input::-webkit-outer-spin-button {
+            -webkit-appearance: none;
+            appearance: none;
+        }
+
+        input[type=password]::-webkit-password-toggle-button {
+            color: white;
+        }
+
+        #input::placeholder {
+            margin: 4px;
+            color: white;
+            font-family: system-ui;
+        }
+
+        #input:focus {
+            outline: none;
+        }
+
+        #title {
+            font-family: system-ui;
+            margin-top: 15px;
+            font-size: 30px;
+        }
+
+        #subtitle {
+            font-family: system-ui;
+            font-size: 15px;
+        }
+
+        #imagecont {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            /* border: 2px solid green; */
+            z-index: 2;
+        }
+
+        #lockscreen {
+            /* background: url(Your\ name\ \(2\).png); */
+            /* filter: blur(10px); */
+            background-size: cover;
+            z-index: 2;
+            width: 99.%;
+            height: 43em;
+            /* border: 2px solid red; */
+            display: none;
+        }
+
+        .timecont {
+            /* border: 2px solid red; */
+            height: 300px;
+            height: 260px;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+        }
+
+        #lock {
+            font-size: 90px;
+            font-family: system-ui;
+            margin-top: 50px;
+        }
+
+        #mahina {
+            font-family: 'Segoe UI';
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        #newcont {
+            position: absolute;
+            background-image: url(Your\ name\ \(2\).png);
+            background-size: cover;
+            /* filter: blur(5px); */
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            top: 0em;
+            z-index: -2;
+        }
+
+        #container {
+            /* background-image: url(Your\ name\ \(2\).png); */
+            z-index: 3;
+            background-size: cover;
+            /* border: 2px solid green; */
+            position: absolute;
+            width: 99.9%;
+            top: 0em;
+            transition: 0.4s all ease-in-out;
+            /* top: -44em; */
+
+        }
+
+        /* #container::before{
+            content: '';
+            filter: blur(5px);
+            z-index: -1;
+            
+        } */
+
+        .footer {
+            /* border: 2px solid red; */
+            height: 23.9em;
+
+            display: flex;
+            align-items: flex-end;
+            justify-content: space-between;
+        }
+
+        
+
+        #subfooter {
+            /* border: 2px solid blue; */
+            padding: 20px;
+            /* width: 150px;
+            height: 34px; */
+        }
+
+        #wifi {
+            height: 28px;
+            margin-right: 20px;
+            width: auto;
+            padding: 4px;
+        }
+
+        #battery {
+            padding: 4px;
+            height: 28px;
+            width: auto;
+        }
+
+        .wifi {
+            height: 28px;
+            margin-right: 7px;
+            width: auto;
+            padding: 7px;
+        }
+
+        .battery {
+            padding: 7px;
+            height: 28px;
+            width: auto;
+            margin-right: 7px;
+        }
+
+        .charge {
+            height: 22px;
+            padding: 10px;
+            width: auto;
+        }
+
+        .wifi:hover,
+        .battery:hover,
+        .charge:hover {
+            background-color: rgba(0, 0, 0, 0.2);
+            border-radius: 8px;
+        }
+    </style>
+
+
+
+
+
+
+
+
+
+
+    <script>
+
+        
+        
+        
+        const input = document.getElementById('input');
+        const loadingcont = document.getElementById('loadingcont');
+        const wifiset = document.getElementById('bijilicont');
+        const forget = document.getElementById('pintext');
+        
+
+        input.addEventListener('input', function(){
+            if(input.value === "1000"){
+                input.style.display = "none";
+                loadingcont.style.display = "flex";
+                wifiset.style.height = "14.2em"
+                forget.style.display = "none";
+                setTimeout(function(){
+                    container.style.display = "none";
+                    lockscreen.style.display = "none";
+                    newcont.style.display = "none";
+                }, 2000);
+            }
+        });
+
+
+
+        const container = document.getElementById('container');
+        var newcont = document.getElementById('newcont');
+        const lockscreen = document.getElementById('lockscreen');
+
+        container.addEventListener('click', function () {
+            container.style.top = '-44em'
+            alert('pass is 1000')
+
+
+            setTimeout(() => {
+                lockscreen.style.display = 'block';
+                newcont.style.filter = 'blur(20px)'
+            }, 500);
+        });
+
+
+        // if(container.style.top === "0em"){
+        //     container.style.top = "-44em";
+        // }
+
+
+
+
+        const now = new Date();
+        console.log(now);
+
+        function updatetime() {
+            const now = new Date();
+            const hours = String(now.getHours()).padStart(2, 0);
+            const minutes = String(now.getMinutes()).padStart(2, 0);
+            const sec = String(now.getSeconds()).padStart(2, 0);
+            const timestring = hours + ":" + minutes;
+            document.getElementById('lock').innerHTML = timestring;
+        }
+        setInterval(updatetime, 1000);
+
+        const days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thrusday", "Friday", "Saturday"];
+        const daysofweek = now.getDay();
+        const newdays = days[daysofweek];
+        console.log(newdays);
+
+        const months = ["January", "February", "March", "April", "May", "June", "July", "August", "September", "October", "November", "December"];
+        const currentmonth = now.getMonth();
+        const newmonths = months[currentmonth];
+        console.log(newmonths);
+
+        const newdate = now.getDate();
+        console.log(newdate);
+
+        const daymonthstring = newdays + "," + " " + newmonths + " " + newdate;
+        console.log(daymonthstring);
+
+        function updatemonth() {
+            document.getElementById('mahina').innerHTML = daymonthstring;
+        }
+        setInterval(updatemonth, 1000);
+
+
+        
+
+    </script>
+</body>
+
+</html>
